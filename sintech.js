@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 
 bot.on("ready", async () => {
-	console.log('Aku Hidup!'); // untuk memberitahu bahwa bot sudah siap
+	console.log('Ready!'); // untuk memberitahu bahwa bot sudah siap
 });
 
 bot.on("message", async (message) => {
