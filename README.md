@@ -1,0 +1,2 @@
+# sintech
+Bot discord
