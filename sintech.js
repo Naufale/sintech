@@ -1,10 +1,10 @@
 const Discord = require("discord.js"); 
-const bot = new Discord.Client({disableEveryone: true}); // botnya tidak bisa mention ke everyon
+const bot = new Discord.Client({disableEveryone: false}); // botnya tidak bisa mention ke everyone
 const config = require("./config.json"); // tempat menaruh prefix & token
 
 bot.on("ready", async () => {
 	console.log(`${bot.user.username} Bot Ready!`); // untuk memberitahu bahwa bot sudah siap
-	bot.user.setActivity("sedang dalam pengkodean", {type: "PLAYING"});
+	bot.user.setActivity("Sedang Dalam Development", {type: "PLAYING"});
 });
 
 bot.on("message", async message => {
