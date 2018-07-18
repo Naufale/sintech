@@ -1,5 +1,5 @@
 exports.run = async (bot, message, args) => {
-    message.channel.send("ciee ustika ciee");
+    message.channel.send("EA");
 }
 
 exports.help = {
