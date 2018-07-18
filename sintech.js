@@ -1,14 +1,31 @@
 const Discord = require("discord.js"); 
-const bot = new Discord.Client();
+const bot = new Discord.Client({disableEveryone: true}); // botnya tidak bisa mention ke everyon
+const config = require("./config.json"); // tempat menaruh prefix & token
 
 bot.on("ready", async () => {
-	console.log('Ready!'); // untuk memberitahu bahwa bot sudah siap
+	console.log(`${bot.user.username} Bot Ready!`); // untuk memberitahu bahwa bot sudah siap
+	bot.user.setActivity("sedang dalam pengkodean", {type: "PLAYING"});
 });
 
-bot.on("message", async (message) => {
-	if (message.content.startsWith('ping')) {
-		message.channel.send("EA"); // untuk mengetes apakah bot merespon atau tidak
+bot.on("message", async message => {
+	if (message.author.bot) return; // bot tidak akan menjawab apabila di command bot lain
+	if (message.channel.type === 'dm') return; // bot tidak akan menjawab di DM
+	
+	let prefix = config.prefix;
+	let msg = message.content.toLowerCase(); // case snsitive
+	let sender = message.autor; // pengirim
+	let args = message.content.slice(prefix.length).trim().split(" ")// bisa milih prefi/command
+	let cmd = args.shift().toLowerCase(); // command tidak case sensitive
+
+	try {
+		let commandFile = require(`./cmds/${cmd}.js`);
+		commandFile.run(bot, message, args);
+	} catch (e) {
+		conseole.log(e.message)
+	} finally {
+		console.log(`${author} menggunakan perintah ${cmd}`);
 	}
+
 });
 
-bot.login(process.env.BOT_TOKEN)
+bot.login(config.token);
