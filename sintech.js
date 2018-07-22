@@ -8,6 +8,28 @@ bot.on("ready", async () => {
 	bot.user.setActivity("Sedang Dalam Development", {type: "PLAYING"});
 });
 
+bot.on('guildMemberAdd', member => {
+    let guild = member.guild;
+    let count = guild.memberCount;
+    let user = member.guild.channels.get('466570242487877634')
+
+    user.setName(`Live User Count: ${count}`)
+
+    let greetmsg = member.guild.channels.get('466570242487877634')
+	greetmsg.send(`Selamat datang ${member.user} di **SINTECH**. **User Count: ${count}** \nJangan lupa baca <#466735905202503689> sebelum berdiskusi bersama disini.`);
+});
+
+bot.on('guildMemberRemove', member => {
+    let guild = member.guild;
+    let count = guild.memberCount;
+    let user = member.guild.channels.get('466570242487877634')
+
+    user.setName(`Live User Count: ${count}`)
+
+    let greetmsg = member.guild.channels.get('466570242487877634')
+    greetmsg.send(`${member.user.tag} is Leaving **SINTECH**. **User Count: ${count}**`);
+});
+
 bot.on("message", async message => {
 	if (message.author.bot) return; // bot tidak akan menjawab apabila di command bot lain
 	if (message.channel.type === 'dm') return; // bot tidak akan menjawab di DM
