@@ -4,7 +4,7 @@ exports.run = async (bot, message, args) => {
     let sicon = message.guild.iconURL; // avatar server
     let serverembed = new Discord.RichEmbed()
     .setAuthor("Server Information")
-    .setColor("RANDOM")
+    .setColor("0xff2f2f")
     .setThumbnail(sicon)
     .addField("Server Name", message.guild.name) // nama server discord
     .addField("Created ON", message.guild.createdAt) // tanggal server dibuat
