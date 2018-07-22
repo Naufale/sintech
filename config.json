@@ -1,4 +1,5 @@
 {
-    "prefix": "$>",
+    "prefix": "!",
+    "autorole": "role",
     "token": "NDY2ODQ3MDQ4ODM5NDYyOTEz.DjAmcw._k5cRUFMcc6RZlo06YmnPe0A2jc"
 }
