@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (bot, message, args) => {
 
     
     await(message.member.addRole('466571446894723094')
