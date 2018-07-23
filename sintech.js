@@ -64,4 +64,4 @@ bot.on("guildMemberAdd", member => {
 	member.addRole(role);
 });
 
-bot.login(config.token);
+bot.login(process.env.bot_token);
