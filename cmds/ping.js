@@ -5,8 +5,8 @@ exports.run = async (client, message, args, color) => {
         let diff = (Date.now() - start); 
         let API = (client.ping).toFixed(2)
         let embed = new Discord.RichEmbed()
-        .setTitle(`🔔 Pong!`)
-        .setColor(0xff2f2f)
+        .setTitle(`🔊 EA!`)
+        .setColor(#0000FF)
         .addField("📶 Latency", `${diff}ms`, true)
         .addField("💻 API", `${API}ms`, true)
         message.edit(embed);
