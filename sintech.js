@@ -45,7 +45,7 @@ bot.on("message", async message => {
 		let commandFile = require(`./cmds/${cmd}.js`);
 		commandFile.run(bot, message, args);
 	} catch (e) {
-		conseole.log(e.message)
+		console.log(e.message)
 	} finally {
 		console.log(`${author} menggunakan perintah ${cmd}`);
 	}
