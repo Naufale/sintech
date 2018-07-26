@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("Tidak memiliki hak akses perintah ini!");
     let autorole = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
     if (!args[0]) { //jika tidak ada argument maka autorole dimatikan
