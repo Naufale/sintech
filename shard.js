@@ -3,7 +3,7 @@ const TOKEN = process.env.SECRET;
 
 const shards = new ShardingManager('./server.js', {
     token: TOKEN,
-    totalShards: 1
+    totalShards: 15
 });
 
 shards.on('launch', shard => {
