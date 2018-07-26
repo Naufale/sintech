@@ -1,1 +1,1 @@
-worker: node sintech.js
+worker: node shard.js
