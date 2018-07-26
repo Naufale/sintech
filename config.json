@@ -1,5 +1,5 @@
 {
-    "prefix": "!",
+    "prefix": "s!",
     "autorole": "role",
-    "color": "#0000FF"
+    "color": "RANDOM"
 }
