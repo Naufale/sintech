@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args) => {
     let sicon = message.guild.iconURL; // avatar server
     let serverembed = new Discord.RichEmbed()
     .setAuthor("Server Information")
